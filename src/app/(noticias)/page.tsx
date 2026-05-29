@@ -1,14 +1,15 @@
 import { Masthead }       from '@/features/noticias/components/Masthead'
 import { FeedController } from '@/features/noticias/components/Feed'
 import { Colophon }       from '@/features/noticias/components/Colophon'
+import { SITE_URL, SITE_NAME } from '@/lib/site'
 
 // ── JSON-LD — dados estruturados para motores de busca
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type':    'WebSite',
-  name:       'Quadro Antelucano',
-  url:        'https://quadroantelucano.com.br',
+  name:       SITE_NAME,
+  url:        SITE_URL,
   description:
     'Agregador editorial de notícias internacionais e brasileiras apresentado ' +
     'com a seriedade tipográfica de um jornal impresso.',
@@ -19,14 +20,14 @@ const jsonLd = {
   },
   publisher: {
     '@type': 'Organization',
-    name:    'Quadro Antelucano',
-    url:     'https://quadroantelucano.com.br',
+    name:    SITE_NAME,
+    url:     SITE_URL,
   },
   inLanguage: 'pt-BR',
   potentialAction: {
     '@type':       'ReadAction',
-    target:        'https://quadroantelucano.com.br',
-    name:          'Ler o Quadro Antelucano',
+    target:        SITE_URL,
+    name:          `Ler o ${SITE_NAME}`,
   },
 }
 

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Libre_Baskerville } from 'next/font/google'
+import { SITE_URL, SITE_NAME, TAGLINE } from '@/lib/site'
 import './globals.css'
 
 
@@ -15,9 +16,6 @@ const libreBaskerville = Libre_Baskerville({
 
 // ── Metadados SEO
 
-const SITE_URL  = 'https://quadroantelucano.com.br'
-const SITE_NAME = 'Quadro Antelucano'
-const TAGLINE   = 'O jornal antes do amanhecer.'
 const DESCRIPTION =
   'Quadro Antelucano é um agregador editorial de notícias do Brasil e do mundo — ' +
   'CNN Brasil, G1, Folha, BBC, Le Monde, NASA, The Verge e mais — ' +
