@@ -1,0 +1,10 @@
+.next/
+node_modules/
+out/
+.env
+.env.local
+.env.*.local
+*.tsbuildinfo
+
+# Notas de desenvolvimento (contêm caminhos locais) — não versionar
+context.md

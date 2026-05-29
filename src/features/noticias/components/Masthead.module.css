@@ -1,0 +1,67 @@
+/* ── Masthead — newspaper nameplate */
+
+.masthead {
+  padding: clamp(1.25rem, 3vw, 2rem) var(--gutter) 0;
+}
+
+.edition {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: var(--fs-meta);
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--ink-mid);
+  padding: 0.55rem 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-display-1);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink);
+  text-align: center;
+  padding: 0.4rem 0 0.2rem;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--section-accent, var(--red));
+  font-weight: 400;
+  transition: color var(--dur-slow) var(--ease);
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.875rem;
+  color: var(--ink-mid);
+  text-align: center;
+  line-height: var(--lh-body);
+  padding-bottom: 0.9rem;
+}
+
+.tagline span {
+  color: var(--section-accent, var(--red));
+  font-style: normal;
+  transition: color var(--dur-slow) var(--ease);
+}
+
+/* ── Rules */
+
+.ruleDouble {
+  display: block;
+  height: 6px;
+  border-top: 2.5px solid var(--line-ink);
+  border-bottom: 1px solid var(--line-ink);
+}
+
+.ruleSingle {
+  display: block;
+  height: 1px;
+  background: var(--line-ink);
+  opacity: 0.85;
+}

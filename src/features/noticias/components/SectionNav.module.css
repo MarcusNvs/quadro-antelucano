@@ -1,0 +1,193 @@
+/* ── Section Nav — index of the paper */
+
+.nav {
+  padding: 0 var(--gutter);
+}
+
+.ruleSingle {
+  display: block;
+  height: 1px;
+  background: var(--line-ink);
+  opacity: 0.85;
+}
+
+/* Toggle de região + tabs. Desktop: lado a lado. Mobile: empilhados. */
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  min-width: 0;
+}
+
+/* ── Toggle Mundo / Brasil */
+
+.regionToggle {
+  display: inline-flex;
+  flex-shrink: 0;
+  border: 1px solid var(--line-ink);
+  border-radius: 2px;
+  background: var(--paper-soft);
+  overflow: hidden;
+}
+
+.regionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.7rem;
+  line-height: 1;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-soft);
+}
+
+.regionIcon {
+  height: 20px;
+  width: auto;            /* mantém a proporção: globo ~quadrado, bandeira mais larga */
+  display: block;
+  opacity: 0.4;
+  transition: opacity var(--dur-fast) var(--ease-soft);
+}
+
+.regionBtn:hover {
+  background: rgba(214, 195, 158, 0.45);
+}
+
+.regionBtn:hover .regionIcon {
+  opacity: 0.75;
+}
+
+.regionBtn[aria-checked='true'] {
+  background: var(--paper-dark);
+}
+
+.regionBtn[aria-checked='true'] .regionIcon {
+  opacity: 1;
+}
+
+.regionBtn + .regionBtn {
+  border-left: 1px solid var(--line-ink);
+}
+
+/* ── Tabs (desktop: índice corrido com separador) */
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0.625rem 0;
+}
+
+.tab {
+  font-family: var(--font-display);
+  font-size: var(--fs-meta);
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--ink-mid);
+  padding: 0.4rem 0.875rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  transition: color var(--dur-fast) var(--ease-soft);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tab + .tab::before {
+  content: '·';
+  position: absolute;
+  left: -0.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink-faint);
+  font-style: normal;
+  pointer-events: none;
+}
+
+.tab:hover {
+  color: var(--ink);
+}
+
+.tab[aria-selected='true'] {
+  color: var(--section-accent, var(--red));
+  font-style: italic;
+}
+
+.tab[aria-selected='true']::after {
+  content: ' ✦';
+  font-style: normal;
+  margin-left: 0.2em;
+}
+
+/* ── Mobile: carrossel de chips
+   Toggle empilhado em cima; tabs viram chips num trilho horizontal
+   rolável, com fade nas bordas e o chip ativo centralizado via JS. */
+@media (max-width: 639px) {
+  .bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.45rem;
+  }
+
+  .regionToggle {
+    align-self: flex-start;
+  }
+
+  .inner {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 0.4rem;
+    padding: 0.1rem 0 0.55rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+    /* fade nas pontas: indica que o trilho rola */
+    -webkit-mask-image: linear-gradient(
+      to right, transparent 0, #000 0.6rem,
+      #000 calc(100% - 1.1rem), transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right, transparent 0, #000 0.6rem,
+      #000 calc(100% - 1.1rem), transparent 100%
+    );
+  }
+
+  .inner::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    padding: 0.36rem 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: var(--paper-soft);
+    scroll-snap-align: center;
+    transition:
+      color var(--dur-fast) var(--ease-soft),
+      border-color var(--dur-fast) var(--ease-soft),
+      background var(--dur-fast) var(--ease-soft);
+  }
+
+  /* chips não usam o separador "·" nem o ✦ — a borda/fundo indicam o estado */
+  .tab + .tab::before {
+    display: none;
+  }
+
+  .tab[aria-selected='true'] {
+    color: var(--section-accent, var(--red));
+    border-color: var(--section-accent, var(--red));
+    background: var(--paper-dark);
+    font-style: italic;
+  }
+
+  .tab[aria-selected='true']::after {
+    content: none;
+  }
+}

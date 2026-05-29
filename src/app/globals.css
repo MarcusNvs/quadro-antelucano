@@ -1,0 +1,117 @@
+/* ============================================================
+   Quadro Antelucano — Design Tokens + Base Reset
+   Pangram Specimen identity. Paper-first. Single mode.
+   ============================================================ */
+
+/* Font loaded via next/font in layout.tsx — sem @import aqui. */
+
+:root {
+  /* ── Palette */
+  --paper-deep:  #b4996e;   /* page surround / burlap field    */
+  --paper:       #ede1c4;   /* main surface                    */
+  --paper-soft:  #f4ead2;   /* card-on-card                    */
+  --paper-dark:  #d6c39e;   /* skeleton blocks / drop-cap bed  */
+  --ink:         #1c1208;   /* primary text                    */
+  --ink-mid:     #4a2e16;   /* secondary text / meta           */
+  --ink-faint:   #8a6040;   /* tertiary / labels               */
+  --red:         #8a1e10;   /* accent · period · ornament      */
+  --line:        rgba(28, 18, 8, 0.18);  /* in-card hairline   */
+  --line-ink:    #1c1208;               /* rule color          */
+
+  /* ── Typography── */
+  --font-display: 'Libre Baskerville', Georgia, serif;
+  --font-body:    'Libre Baskerville', Georgia, serif;
+  --font-mono:    'SF Mono', ui-monospace, monospace;
+
+  /* ── Type Scale── */
+  --fs-display-1:   clamp(2rem, 5vw, 2.875rem);  /* masthead nameplate */
+  --fs-display-2:   clamp(1.5rem, 3.5vw, 2rem);  /* feed title         */
+  --fs-display-3:   1.25rem;                      /* article headline   */
+  --fs-body:        1rem;
+  --fs-small:       0.9375rem;                    /* excerpt            */
+  --fs-meta:        0.6rem;                       /* uppercase meta     */
+  --fs-label:       0.58rem;                      /* colophon / labels  */
+
+  /* ── Line Heights─ */
+  --lh-display: 1.08;
+  --lh-body:    1.5;
+  --lh-loose:   1.65;
+
+  /* ── Letter Spacing  */
+  --tracking-tight:  -0.02em;
+  --tracking-meta:    0.24em;
+  --tracking-poster:  0.18em;
+
+  /* ── Shadows */
+  --shadow-paper:
+    0 2px 8px rgba(0, 0, 0, 0.16),
+    0 18px 52px rgba(0, 0, 0, 0.3);
+  --shadow-paper-soft:
+    0 1px 4px rgba(0, 0, 0, 0.10),
+    0 8px 24px rgba(0, 0, 0, 0.16);
+
+  /* ── Vignette */
+  --vignette: radial-gradient(
+    ellipse 85% 65% at 50% 30%,
+    transparent 20%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
+
+  /* ── Motion */
+  --dur-fast:  150ms;
+  --dur-slow:  600ms;
+  --ease:      cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Layout */
+  --gutter: clamp(1rem, 4vw, 3.75rem);
+}
+
+/* ── Base Reset */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: var(--lh-loose);
+  background: var(--paper-deep);
+  color: var(--ink);
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+img, picture, svg {
+  display: block;
+  max-width: 100%;
+}
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

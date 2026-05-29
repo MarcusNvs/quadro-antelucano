@@ -1,0 +1,46 @@
+/* Skeleton — blocos de tinta estáticos, o papel não pisca */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+@media (min-width: 640px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rule {
+  display: block;
+  height: 6px;
+  border-top: 2.5px solid var(--line-ink);
+  border-bottom: 1px solid var(--line-ink);
+  margin-bottom: 0.375rem;
+  opacity: 0.5;
+}
+
+.block {
+  background: var(--paper-dark);
+  height: 6rem;
+  opacity: 0.7;
+}
+
+.line {
+  background: var(--paper-dark);
+  height: 0.6rem;
+  opacity: 0.6;
+}
+
+.lineShort { width: 35%; }
+.lineMid   { width: 75%; }
+.lineFull  { width: 100%; }

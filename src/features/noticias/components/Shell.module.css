@@ -1,0 +1,32 @@
+/* ── Página principal — folha de papel sobre o campo burlap ── */
+
+.page {
+  max-width: 1180px;
+  margin: clamp(0.75rem, 2vw, 2rem) auto;
+  background: var(--paper);
+  position: relative;
+  box-shadow: var(--shadow-paper);
+}
+
+/* Vinheta sobre o papel */
+.page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--vignette);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile: sem margens laterais (papel cola nas bordas) */
+@media (max-width: 480px) {
+  .page {
+    margin: 0;
+    box-shadow: none;
+  }
+}

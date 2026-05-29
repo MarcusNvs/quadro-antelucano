@@ -1,0 +1,28 @@
+/* ── Colophon footer ── */
+
+.colophon {
+  padding: 0 var(--gutter) clamp(2rem, 4vw, 2.75rem);
+}
+
+.rule {
+  display: block;
+  height: 1px;
+  background: var(--line-ink);
+  opacity: 0.85;
+  margin-bottom: 1rem;
+}
+
+.text {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+  line-height: 2.1;
+}
+
+.sep {
+  color: var(--red);
+  margin: 0 0.5em;
+}
