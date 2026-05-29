@@ -31,8 +31,8 @@ export const metadata: Metadata = {
 
   description: DESCRIPTION,
 
-  authors: [{ name: 'Marcus Neves', url: SITE_URL }],
-  creator: 'Marcus Neves',
+  authors: [{ name: 'Marcus Passos', url: SITE_URL }],
+  creator: 'Marcus Passos',
   publisher: SITE_NAME,
 
   // ── Open Graph

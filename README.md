@@ -117,5 +117,5 @@ npm start
 
 ## Autor
 
-**Marcus Neves** — projeto de portfólio.
+**Marcus Passos** — projeto de portfólio.
 Composto em Libre Baskerville · MMXXVI.

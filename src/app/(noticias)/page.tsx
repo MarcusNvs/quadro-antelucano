@@ -15,7 +15,7 @@ const jsonLd = {
     'com a seriedade tipográfica de um jornal impresso.',
   author: {
     '@type': 'Person',
-    name:    'Marcus Neves',
+    name:    'Marcus Passos',
     email:   'marcuspneves@gmail.com',
   },
   publisher: {
