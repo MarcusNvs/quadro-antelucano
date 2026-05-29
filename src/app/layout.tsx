@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card:        'summary_large_image',
     title:       `${SITE_NAME} — ${TAGLINE}`,
     description: DESCRIPTION,
-    creator:     '@marcuspneves',
+    creator:     '@kbvx_',
   },
 
   // ── Robots
